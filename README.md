@@ -1,14 +1,14 @@
 # ShyGinErrors
 
-[![Build Status](https://github.com/shyandsy/ShyGinErrors/workflows/Run%20Tests/badge.svg?branch=main)](https://github.com/shyandsy/ShyGinErrors/actions?query=branch%3Amain)
-[![codecov](https://codecov.io/gh/shyandsy/shyginerrors/branch/main/graph/badge.svg)](https://codecov.io/gh/shyandsy/shyginerrors)
-[![Go Report Card](https://goreportcard.com/badge/github.com/shyandsy/shyginerrors)](https://goreportcard.com/report/github.com/shyandsy/shyginerrors)
+[![Build Status](https://github.com/ramb0111/ShyGinErrors/workflows/Run%20Tests/badge.svg?branch=main)](https://github.com/ramb0111/ShyGinErrors/actions?query=branch%3Amain)
+[![codecov](https://codecov.io/gh/ramb0111/shyginerrors/branch/main/graph/badge.svg)](https://codecov.io/gh/shyandsy/shyginerrors)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ramb0111/shyginerrors)](https://goreportcard.com/report/github.com/ramb0111/shyginerrors)
 An extension to generate key value errors for gin framework and go validator error 
 
 #### Usage
 Install it
 ```shell
-go get github.com/shyandsy/ShyGinErrors
+go get github.com/ramb0111/ShyGinErrors
 ```
 
 #### What we want 
@@ -24,7 +24,7 @@ validate request and get error messages like below
 sample code
 ```go
 import (
-    "github.com/shyandsy/ShyGinErrors"
+    "github.com/ramb0111/ShyGinErrors"
 )
 
 // define error messages

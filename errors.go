@@ -46,6 +46,26 @@ func (ge ginErrors) ListAllErrors(model interface{}, err error) map[string]strin
 			messageTag := field.Tag.Get("msg")
 			msg := ge.getErrorMessage(messageTag)
 
+			if field.Type.Kind() == reflect.Slice {
+				if value != nil {
+					for i := 0; i < reflect.ValueOf(value).Len(); i++ {
+						mps := ge.ListAllErrors(reflect.ValueOf(value).Index(i).Interface(), err)
+						for k, v := range mps {
+							errors[k] = v
+						}
+					}
+				}
+			}
+
+			if field.Type.Kind() == reflect.Struct {
+				if value != nil {
+					mps := ge.ListAllErrors(value, err)
+					for k, v := range mps {
+						errors[k] = v
+					}
+				}
+			}
+
 			fmt.Printf("%s: %v = %v, tag= %v\n", field.Name, field.Type, value, jsonTag)
 			fields[field.Name] = ErrorResult{
 				Field:   field.Name,
