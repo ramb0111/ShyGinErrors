@@ -1,4 +1,4 @@
-module github.com/ramb0111/ShyGinErrors
+module github.com/ramb0111/ShyGinErrors/v2
 
 go 1.16
 
