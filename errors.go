@@ -38,6 +38,10 @@ func (ge ginErrors) ListAllErrors(model interface{}, err error) map[string]strin
 
 		for i := 0; i < types.NumField(); i++ {
 			field := types.Field(i)
+			// Only exported fields have PkgPath == ""
+			if field.PkgPath != "" {
+				continue // skip unexported fields
+			}
 			value := values.Field(i).Interface()
 			jsonTag := field.Tag.Get("json")
 			if jsonTag == "" {
